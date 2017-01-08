@@ -1,0 +1,12 @@
+D:\work\Zeka\GISapp\GISapp\GISapp\Model\bin\Debug\Model.dll.config
+D:\work\Zeka\GISapp\GISapp\GISapp\Model\bin\Debug\Model.dll
+D:\work\Zeka\GISapp\GISapp\GISapp\Model\bin\Debug\Model.pdb
+D:\work\Zeka\GISapp\GISapp\GISapp\Model\bin\Debug\EntityFramework.dll
+D:\work\Zeka\GISapp\GISapp\GISapp\Model\bin\Debug\EntityFramework.SqlServer.dll
+D:\work\Zeka\GISapp\GISapp\GISapp\Model\bin\Debug\Oracle.ManagedDataAccess.dll
+D:\work\Zeka\GISapp\GISapp\GISapp\Model\bin\Debug\Oracle.ManagedDataAccess.EntityFramework.dll
+D:\work\Zeka\GISapp\GISapp\GISapp\Model\bin\Debug\EntityFramework.xml
+D:\work\Zeka\GISapp\GISapp\GISapp\Model\bin\Debug\EntityFramework.SqlServer.xml
+D:\work\Zeka\GISapp\GISapp\GISapp\Model\obj\Debug\Model.csprojResolveAssemblyReference.cache
+D:\work\Zeka\GISapp\GISapp\GISapp\Model\obj\Debug\Model.dll
+D:\work\Zeka\GISapp\GISapp\GISapp\Model\obj\Debug\Model.pdb

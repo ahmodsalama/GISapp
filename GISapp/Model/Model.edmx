@@ -1,0 +1,396 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Model.Store" Provider="Oracle.ManagedDataAccess.Client" ProviderManifestToken="11.2" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="T_COMN_BENF_TP">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="T_COMN_BLACK_LIST">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="FK_BENF_ID" Type="number" Precision="38" Scale="0" />
+          <Property Name="BLACKEDDATE" Type="date" />
+        </EntityType>
+        <EntityType Name="T_COMN_COMP_DATA">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="FK_BENF_ID" Type="number" Precision="38" Scale="0" />
+          <Property Name="COMPNAME" Type="nvarchar2" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="T_COMN_GOV_DATA">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="FK_BENF_ID" Type="number" Precision="38" Scale="0" />
+          <Property Name="GOVNAME" Type="nvarchar2" MaxLength="1" />
+        </EntityType>
+        <EntityType Name="T_COMN_MAIN_ACTIVITY">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="ACTIVITY" Type="nvarchar2" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="T_COMN_PERS_DATA">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="FK_BENF_ID" Type="number" Precision="38" Scale="0" />
+          <Property Name="PERSNAME" Type="nvarchar2" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="T_COMN_SUB_ACTIVITY">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="FK_MAINACTIVITY" Type="number" Precision="38" Scale="0" />
+          <Property Name="ACTIVITY" Type="nvarchar2" MaxLength="20" />
+        </EntityType>
+        <Association Name="SYS_C0011321">
+          <End Role="T_COMN_MAIN_ACTIVITY" Type="Self.T_COMN_MAIN_ACTIVITY" Multiplicity="0..1" />
+          <End Role="T_COMN_SUB_ACTIVITY" Type="Self.T_COMN_SUB_ACTIVITY" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_COMN_MAIN_ACTIVITY">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="T_COMN_SUB_ACTIVITY">
+              <PropertyRef Name="FK_MAINACTIVITY" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SYS_C0011327">
+          <End Role="T_COMN_BENF_TP" Type="Self.T_COMN_BENF_TP" Multiplicity="0..1" />
+          <End Role="T_COMN_BLACK_LIST" Type="Self.T_COMN_BLACK_LIST" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_COMN_BENF_TP">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="T_COMN_BLACK_LIST">
+              <PropertyRef Name="FK_BENF_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SYS_C0011328">
+          <End Role="T_COMN_BENF_TP" Type="Self.T_COMN_BENF_TP" Multiplicity="0..1" />
+          <End Role="T_COMN_COMP_DATA" Type="Self.T_COMN_COMP_DATA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_COMN_BENF_TP">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="T_COMN_COMP_DATA">
+              <PropertyRef Name="FK_BENF_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SYS_C0011329">
+          <End Role="T_COMN_BENF_TP" Type="Self.T_COMN_BENF_TP" Multiplicity="0..1" />
+          <End Role="T_COMN_GOV_DATA" Type="Self.T_COMN_GOV_DATA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_COMN_BENF_TP">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="T_COMN_GOV_DATA">
+              <PropertyRef Name="FK_BENF_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SYS_C0011330">
+          <End Role="T_COMN_BENF_TP" Type="Self.T_COMN_BENF_TP" Multiplicity="1" />
+          <End Role="T_COMN_PERS_DATA" Type="Self.T_COMN_PERS_DATA" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="T_COMN_BENF_TP">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="T_COMN_PERS_DATA">
+              <PropertyRef Name="ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="ModelStoreContainer">
+          <EntitySet Name="T_COMN_BENF_TP" EntityType="Self.T_COMN_BENF_TP" Schema="COMON" store:Type="Tables" />
+          <EntitySet Name="T_COMN_BLACK_LIST" EntityType="Self.T_COMN_BLACK_LIST" Schema="COMON" store:Type="Tables" />
+          <EntitySet Name="T_COMN_COMP_DATA" EntityType="Self.T_COMN_COMP_DATA" Schema="COMON" store:Type="Tables" />
+          <EntitySet Name="T_COMN_GOV_DATA" EntityType="Self.T_COMN_GOV_DATA" Schema="COMON" store:Type="Tables" />
+          <EntitySet Name="T_COMN_MAIN_ACTIVITY" EntityType="Self.T_COMN_MAIN_ACTIVITY" Schema="COMON" store:Type="Tables" />
+          <EntitySet Name="T_COMN_PERS_DATA" EntityType="Self.T_COMN_PERS_DATA" Schema="COMON" store:Type="Tables" />
+          <EntitySet Name="T_COMN_SUB_ACTIVITY" EntityType="Self.T_COMN_SUB_ACTIVITY" Schema="COMON" store:Type="Tables" />
+          <AssociationSet Name="SYS_C0011321" Association="Self.SYS_C0011321">
+            <End Role="T_COMN_MAIN_ACTIVITY" EntitySet="T_COMN_MAIN_ACTIVITY" />
+            <End Role="T_COMN_SUB_ACTIVITY" EntitySet="T_COMN_SUB_ACTIVITY" />
+          </AssociationSet>
+          <AssociationSet Name="SYS_C0011327" Association="Self.SYS_C0011327">
+            <End Role="T_COMN_BENF_TP" EntitySet="T_COMN_BENF_TP" />
+            <End Role="T_COMN_BLACK_LIST" EntitySet="T_COMN_BLACK_LIST" />
+          </AssociationSet>
+          <AssociationSet Name="SYS_C0011328" Association="Self.SYS_C0011328">
+            <End Role="T_COMN_BENF_TP" EntitySet="T_COMN_BENF_TP" />
+            <End Role="T_COMN_COMP_DATA" EntitySet="T_COMN_COMP_DATA" />
+          </AssociationSet>
+          <AssociationSet Name="SYS_C0011329" Association="Self.SYS_C0011329">
+            <End Role="T_COMN_BENF_TP" EntitySet="T_COMN_BENF_TP" />
+            <End Role="T_COMN_GOV_DATA" EntitySet="T_COMN_GOV_DATA" />
+          </AssociationSet>
+          <AssociationSet Name="SYS_C0011330" Association="Self.SYS_C0011330">
+            <End Role="T_COMN_BENF_TP" EntitySet="T_COMN_BENF_TP" />
+            <End Role="T_COMN_PERS_DATA" EntitySet="T_COMN_PERS_DATA" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="T_COMN_BENF_TP">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <NavigationProperty Name="T_COMN_BLACK_LIST" Relationship="Self.SYS_C0011327" FromRole="T_COMN_BENF_TP" ToRole="T_COMN_BLACK_LIST" />
+          <NavigationProperty Name="T_COMN_COMP_DATA" Relationship="Self.SYS_C0011328" FromRole="T_COMN_BENF_TP" ToRole="T_COMN_COMP_DATA" />
+          <NavigationProperty Name="T_COMN_GOV_DATA" Relationship="Self.SYS_C0011329" FromRole="T_COMN_BENF_TP" ToRole="T_COMN_GOV_DATA" />
+          <NavigationProperty Name="T_COMN_PERS_DATA" Relationship="Self.SYS_C0011330" FromRole="T_COMN_BENF_TP" ToRole="T_COMN_PERS_DATA" />
+        </EntityType>
+        <EntityType Name="T_COMN_BLACK_LIST">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="FK_BENF_ID" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="BLACKEDDATE" Type="DateTime" />
+          <NavigationProperty Name="T_COMN_BENF_TP" Relationship="Self.SYS_C0011327" FromRole="T_COMN_BLACK_LIST" ToRole="T_COMN_BENF_TP" />
+        </EntityType>
+        <EntityType Name="T_COMN_COMP_DATA">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="FK_BENF_ID" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="COMPNAME" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="T_COMN_BENF_TP" Relationship="Self.SYS_C0011328" FromRole="T_COMN_COMP_DATA" ToRole="T_COMN_BENF_TP" />
+        </EntityType>
+        <EntityType Name="T_COMN_GOV_DATA">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="FK_BENF_ID" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="GOVNAME" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="T_COMN_BENF_TP" Relationship="Self.SYS_C0011329" FromRole="T_COMN_GOV_DATA" ToRole="T_COMN_BENF_TP" />
+        </EntityType>
+        <EntityType Name="T_COMN_MAIN_ACTIVITY">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="ACTIVITY" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="T_COMN_SUB_ACTIVITY" Relationship="Self.SYS_C0011321" FromRole="T_COMN_MAIN_ACTIVITY" ToRole="T_COMN_SUB_ACTIVITY" />
+        </EntityType>
+        <EntityType Name="T_COMN_PERS_DATA">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="FK_BENF_ID" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="PERSNAME" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="T_COMN_BENF_TP" Relationship="Self.SYS_C0011330" FromRole="T_COMN_PERS_DATA" ToRole="T_COMN_BENF_TP" />
+        </EntityType>
+        <EntityType Name="T_COMN_SUB_ACTIVITY">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="FK_MAINACTIVITY" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="ACTIVITY" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="T_COMN_MAIN_ACTIVITY" Relationship="Self.SYS_C0011321" FromRole="T_COMN_SUB_ACTIVITY" ToRole="T_COMN_MAIN_ACTIVITY" />
+        </EntityType>
+        <Association Name="SYS_C0011327">
+          <End Role="T_COMN_BENF_TP" Type="Self.T_COMN_BENF_TP" Multiplicity="0..1" />
+          <End Role="T_COMN_BLACK_LIST" Type="Self.T_COMN_BLACK_LIST" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_COMN_BENF_TP">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="T_COMN_BLACK_LIST">
+              <PropertyRef Name="FK_BENF_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SYS_C0011328">
+          <End Role="T_COMN_BENF_TP" Type="Self.T_COMN_BENF_TP" Multiplicity="0..1" />
+          <End Role="T_COMN_COMP_DATA" Type="Self.T_COMN_COMP_DATA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_COMN_BENF_TP">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="T_COMN_COMP_DATA">
+              <PropertyRef Name="FK_BENF_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SYS_C0011329">
+          <End Role="T_COMN_BENF_TP" Type="Self.T_COMN_BENF_TP" Multiplicity="0..1" />
+          <End Role="T_COMN_GOV_DATA" Type="Self.T_COMN_GOV_DATA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_COMN_BENF_TP">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="T_COMN_GOV_DATA">
+              <PropertyRef Name="FK_BENF_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SYS_C0011330">
+          <End Role="T_COMN_BENF_TP" Type="Self.T_COMN_BENF_TP" Multiplicity="1" />
+          <End Role="T_COMN_PERS_DATA" Type="Self.T_COMN_PERS_DATA" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="T_COMN_BENF_TP">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="T_COMN_PERS_DATA">
+              <PropertyRef Name="ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SYS_C0011321">
+          <End Role="T_COMN_MAIN_ACTIVITY" Type="Self.T_COMN_MAIN_ACTIVITY" Multiplicity="0..1" />
+          <End Role="T_COMN_SUB_ACTIVITY" Type="Self.T_COMN_SUB_ACTIVITY" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_COMN_MAIN_ACTIVITY">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="T_COMN_SUB_ACTIVITY">
+              <PropertyRef Name="FK_MAINACTIVITY" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="T_COMN_BENF_TP" EntityType="Self.T_COMN_BENF_TP" />
+          <EntitySet Name="T_COMN_BLACK_LIST" EntityType="Self.T_COMN_BLACK_LIST" />
+          <EntitySet Name="T_COMN_COMP_DATA" EntityType="Self.T_COMN_COMP_DATA" />
+          <EntitySet Name="T_COMN_GOV_DATA" EntityType="Self.T_COMN_GOV_DATA" />
+          <EntitySet Name="T_COMN_MAIN_ACTIVITY" EntityType="Self.T_COMN_MAIN_ACTIVITY" />
+          <EntitySet Name="T_COMN_PERS_DATA" EntityType="Self.T_COMN_PERS_DATA" />
+          <EntitySet Name="T_COMN_SUB_ACTIVITY" EntityType="Self.T_COMN_SUB_ACTIVITY" />
+          <AssociationSet Name="SYS_C0011327" Association="Self.SYS_C0011327">
+            <End Role="T_COMN_BENF_TP" EntitySet="T_COMN_BENF_TP" />
+            <End Role="T_COMN_BLACK_LIST" EntitySet="T_COMN_BLACK_LIST" />
+          </AssociationSet>
+          <AssociationSet Name="SYS_C0011328" Association="Self.SYS_C0011328">
+            <End Role="T_COMN_BENF_TP" EntitySet="T_COMN_BENF_TP" />
+            <End Role="T_COMN_COMP_DATA" EntitySet="T_COMN_COMP_DATA" />
+          </AssociationSet>
+          <AssociationSet Name="SYS_C0011329" Association="Self.SYS_C0011329">
+            <End Role="T_COMN_BENF_TP" EntitySet="T_COMN_BENF_TP" />
+            <End Role="T_COMN_GOV_DATA" EntitySet="T_COMN_GOV_DATA" />
+          </AssociationSet>
+          <AssociationSet Name="SYS_C0011330" Association="Self.SYS_C0011330">
+            <End Role="T_COMN_BENF_TP" EntitySet="T_COMN_BENF_TP" />
+            <End Role="T_COMN_PERS_DATA" EntitySet="T_COMN_PERS_DATA" />
+          </AssociationSet>
+          <AssociationSet Name="SYS_C0011321" Association="Self.SYS_C0011321">
+            <End Role="T_COMN_MAIN_ACTIVITY" EntitySet="T_COMN_MAIN_ACTIVITY" />
+            <End Role="T_COMN_SUB_ACTIVITY" EntitySet="T_COMN_SUB_ACTIVITY" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="Entities">
+          <EntitySetMapping Name="T_COMN_BENF_TP">
+            <EntityTypeMapping TypeName="Model.T_COMN_BENF_TP">
+              <MappingFragment StoreEntitySet="T_COMN_BENF_TP">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_COMN_BLACK_LIST">
+            <EntityTypeMapping TypeName="Model.T_COMN_BLACK_LIST">
+              <MappingFragment StoreEntitySet="T_COMN_BLACK_LIST">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="FK_BENF_ID" ColumnName="FK_BENF_ID" />
+                <ScalarProperty Name="BLACKEDDATE" ColumnName="BLACKEDDATE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_COMN_COMP_DATA">
+            <EntityTypeMapping TypeName="Model.T_COMN_COMP_DATA">
+              <MappingFragment StoreEntitySet="T_COMN_COMP_DATA">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="FK_BENF_ID" ColumnName="FK_BENF_ID" />
+                <ScalarProperty Name="COMPNAME" ColumnName="COMPNAME" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_COMN_GOV_DATA">
+            <EntityTypeMapping TypeName="Model.T_COMN_GOV_DATA">
+              <MappingFragment StoreEntitySet="T_COMN_GOV_DATA">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="FK_BENF_ID" ColumnName="FK_BENF_ID" />
+                <ScalarProperty Name="GOVNAME" ColumnName="GOVNAME" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_COMN_MAIN_ACTIVITY">
+            <EntityTypeMapping TypeName="Model.T_COMN_MAIN_ACTIVITY">
+              <MappingFragment StoreEntitySet="T_COMN_MAIN_ACTIVITY">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="ACTIVITY" ColumnName="ACTIVITY" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_COMN_PERS_DATA">
+            <EntityTypeMapping TypeName="Model.T_COMN_PERS_DATA">
+              <MappingFragment StoreEntitySet="T_COMN_PERS_DATA">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="FK_BENF_ID" ColumnName="FK_BENF_ID" />
+                <ScalarProperty Name="PERSNAME" ColumnName="PERSNAME" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_COMN_SUB_ACTIVITY">
+            <EntityTypeMapping TypeName="Model.T_COMN_SUB_ACTIVITY">
+              <MappingFragment StoreEntitySet="T_COMN_SUB_ACTIVITY">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="FK_MAINACTIVITY" ColumnName="FK_MAINACTIVITY" />
+                <ScalarProperty Name="ACTIVITY" ColumnName="ACTIVITY" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="Entities">
+    <EntitySetMapping Name="T_COMN_BENF_TP">
+      <EntityTypeMapping TypeName="Model.T_COMN_BENF_TP">
+        <MappingFragment StoreEntitySet="T_COMN_BENF_TP">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_COMN_BLACK_LIST">
+      <EntityTypeMapping TypeName="Model.T_COMN_BLACK_LIST">
+        <MappingFragment StoreEntitySet="T_COMN_BLACK_LIST">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="FK_BENF_ID" ColumnName="FK_BENF_ID" />
+          <ScalarProperty Name="BLACKEDDATE" ColumnName="BLACKEDDATE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_COMN_COMP_DATA">
+      <EntityTypeMapping TypeName="Model.T_COMN_COMP_DATA">
+        <MappingFragment StoreEntitySet="T_COMN_COMP_DATA">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="FK_BENF_ID" ColumnName="FK_BENF_ID" />
+          <ScalarProperty Name="COMPNAME" ColumnName="COMPNAME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_COMN_GOV_DATA">
+      <EntityTypeMapping TypeName="Model.T_COMN_GOV_DATA">
+        <MappingFragment StoreEntitySet="T_COMN_GOV_DATA">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="FK_BENF_ID" ColumnName="FK_BENF_ID" />
+          <ScalarProperty Name="GOVNAME" ColumnName="GOVNAME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_COMN_MAIN_ACTIVITY">
+      <EntityTypeMapping TypeName="Model.T_COMN_MAIN_ACTIVITY">
+        <MappingFragment StoreEntitySet="T_COMN_MAIN_ACTIVITY">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="ACTIVITY" ColumnName="ACTIVITY" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_COMN_PERS_DATA">
+      <EntityTypeMapping TypeName="Model.T_COMN_PERS_DATA">
+        <MappingFragment StoreEntitySet="T_COMN_PERS_DATA">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="FK_BENF_ID" ColumnName="FK_BENF_ID" />
+          <ScalarProperty Name="PERSNAME" ColumnName="PERSNAME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_COMN_SUB_ACTIVITY">
+      <EntityTypeMapping TypeName="Model.T_COMN_SUB_ACTIVITY">
+        <MappingFragment StoreEntitySet="T_COMN_SUB_ACTIVITY">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="FK_MAINACTIVITY" ColumnName="FK_MAINACTIVITY" />
+          <ScalarProperty Name="ACTIVITY" ColumnName="ACTIVITY" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,15 @@
+D:\work\Ghareeb\itlink.support\Lawyer\LawSystem1\DAL\bin\Debug\DAL.dll.config
+D:\work\Ghareeb\itlink.support\Lawyer\LawSystem1\DAL\bin\Debug\DAL.dll
+D:\work\Ghareeb\itlink.support\Lawyer\LawSystem1\DAL\bin\Debug\DAL.pdb
+D:\work\Ghareeb\itlink.support\Lawyer\LawSystem1\DAL\bin\Debug\EntityFramework.dll
+D:\work\Ghareeb\itlink.support\Lawyer\LawSystem1\DAL\bin\Debug\EntityFramework.SqlServer.dll
+D:\work\Ghareeb\itlink.support\Lawyer\LawSystem1\DAL\bin\Debug\Model.dll
+D:\work\Ghareeb\itlink.support\Lawyer\LawSystem1\DAL\bin\Debug\Model.pdb
+D:\work\Ghareeb\itlink.support\Lawyer\LawSystem1\DAL\bin\Debug\EntityFramework.xml
+D:\work\Ghareeb\itlink.support\Lawyer\LawSystem1\DAL\bin\Debug\EntityFramework.SqlServer.xml
+D:\work\Ghareeb\itlink.support\Lawyer\LawSystem1\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+D:\work\Ghareeb\itlink.support\Lawyer\LawSystem1\DAL\obj\Debug\DAL.dll
+D:\work\Ghareeb\itlink.support\Lawyer\LawSystem1\DAL\obj\Debug\DAL.pdb
+D:\work\Zeka\GISapp\GISapp\GISapp\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+D:\work\Zeka\GISapp\GISapp\GISapp\DAL\obj\Debug\DAL.dll
+D:\work\Zeka\GISapp\GISapp\GISapp\DAL\obj\Debug\DAL.pdb
