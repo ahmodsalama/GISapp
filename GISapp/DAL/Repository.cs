@@ -14,6 +14,7 @@ namespace DAL
     {
         private DbContext _context;
         private DbSet<T> _set;
+        public DbContext ctx;
         public Repository()
             : this(new Entities())
         {
@@ -23,6 +24,7 @@ namespace DAL
         public Repository(DbContext context)
         {
             _context = context;
+            ctx = context;
             _set = _context.Set<T>();
         }
         public IQueryable<T> GetAll()
