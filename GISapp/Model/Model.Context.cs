@@ -18,6 +18,7 @@ namespace Model
         public Entities()
             : base("name=Entities")
         {
+            this.Configuration.LazyLoadingEnabled = false;
         }
     
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
@@ -30,7 +31,7 @@ namespace Model
         public virtual DbSet<T_COMN_COMP_DATA> T_COMN_COMP_DATA { get; set; }
         public virtual DbSet<T_COMN_GOV_DATA> T_COMN_GOV_DATA { get; set; }
         public virtual DbSet<T_COMN_MAIN_ACTIVITY> T_COMN_MAIN_ACTIVITY { get; set; }
-        public virtual DbSet<T_COMN_PERS_DATA> T_COMN_PERS_DATA { get; set; }
         public virtual DbSet<T_COMN_SUB_ACTIVITY> T_COMN_SUB_ACTIVITY { get; set; }
+        public virtual DbSet<T_COMN_PERS_DATA> T_COMN_PERS_DATA { get; set; }
     }
 }

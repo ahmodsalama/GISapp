@@ -11,6 +11,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PERS.BLL", "PERS.BLL\PERS.B
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "COMON.BLL", "COMON.BLL\COMON.BLL.csproj", "{21FB7357-F96E-4454-8BE3-E23EB4399F15}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "COMON.WEPAPI", "COMON.WEPAPI\COMON.WEPAPI.csproj", "{2A7D7AED-AE0C-47BA-A31E-1ACB357EED45}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sample", "sample\sample.csproj", "{3C0BF27F-B0F4-4194-A929-E1ABE90CDA8B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +37,14 @@ Global
 		{21FB7357-F96E-4454-8BE3-E23EB4399F15}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{21FB7357-F96E-4454-8BE3-E23EB4399F15}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{21FB7357-F96E-4454-8BE3-E23EB4399F15}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2A7D7AED-AE0C-47BA-A31E-1ACB357EED45}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A7D7AED-AE0C-47BA-A31E-1ACB357EED45}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A7D7AED-AE0C-47BA-A31E-1ACB357EED45}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A7D7AED-AE0C-47BA-A31E-1ACB357EED45}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C0BF27F-B0F4-4194-A929-E1ABE90CDA8B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C0BF27F-B0F4-4194-A929-E1ABE90CDA8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C0BF27F-B0F4-4194-A929-E1ABE90CDA8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C0BF27F-B0F4-4194-A929-E1ABE90CDA8B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

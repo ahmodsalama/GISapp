@@ -17,6 +17,9 @@ namespace Model
         public decimal ID { get; set; }
         public Nullable<decimal> FK_BENF_ID { get; set; }
         public string PERSNAME { get; set; }
+        public string PERSNID { get; set; }
+        public Nullable<System.DateTime> PERSBIRTHDATE { get; set; }
+        public string PERSADDRESS { get; set; }
     
         public virtual T_COMN_BENF_TP T_COMN_BENF_TP { get; set; }
     }

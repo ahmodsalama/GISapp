@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="benf.cs" />
     <Compile Include="blackList.cs" />
     <Compile Include="pers.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

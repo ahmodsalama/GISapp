@@ -8,7 +8,7 @@ using Model;
 
 namespace COMON.BLL
 {
-    class pers : Repository<T_COMN_PERS_DATA>
+    public class pers : Repository<T_COMN_PERS_DATA>
     {
         public decimal Save(T_COMN_PERS_DATA person)
         {

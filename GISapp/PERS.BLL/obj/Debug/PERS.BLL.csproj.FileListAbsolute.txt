@@ -1,0 +1,11 @@
+D:\work\Zeka\GISapp\GISapp\GISapp\PERS.BLL\bin\Debug\PERS.BLL.dll
+D:\work\Zeka\GISapp\GISapp\GISapp\PERS.BLL\bin\Debug\PERS.BLL.pdb
+D:\work\Zeka\GISapp\GISapp\GISapp\PERS.BLL\bin\Debug\DAL.dll
+D:\work\Zeka\GISapp\GISapp\GISapp\PERS.BLL\bin\Debug\Model.dll
+D:\work\Zeka\GISapp\GISapp\GISapp\PERS.BLL\bin\Debug\EntityFramework.dll
+D:\work\Zeka\GISapp\GISapp\GISapp\PERS.BLL\bin\Debug\DAL.pdb
+D:\work\Zeka\GISapp\GISapp\GISapp\PERS.BLL\bin\Debug\Model.pdb
+D:\work\Zeka\GISapp\GISapp\GISapp\PERS.BLL\bin\Debug\EntityFramework.xml
+D:\work\Zeka\GISapp\GISapp\GISapp\PERS.BLL\obj\Debug\PERS.BLL.csprojResolveAssemblyReference.cache
+D:\work\Zeka\GISapp\GISapp\GISapp\PERS.BLL\obj\Debug\PERS.BLL.dll
+D:\work\Zeka\GISapp\GISapp\GISapp\PERS.BLL\obj\Debug\PERS.BLL.pdb

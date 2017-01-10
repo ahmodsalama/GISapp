@@ -4,13 +4,13 @@
     <Key>
       <PropertyRef Name="ID" />
     </Key>
-    <Property Name="ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="ID" Type="number" Precision="38" Scale="0" Nullable="false" StoreGeneratedPattern="Identity" />
   </EntityType>
   <EntityType Name="T_COMN_BLACK_LIST">
     <Key>
       <PropertyRef Name="ID" />
     </Key>
-    <Property Name="ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="ID" Type="number" Precision="38" Scale="0" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="FK_BENF_ID" Type="number" Precision="38" Scale="0" />
     <Property Name="BLACKEDDATE" Type="date" />
   </EntityType>
@@ -18,7 +18,7 @@
     <Key>
       <PropertyRef Name="ID" />
     </Key>
-    <Property Name="ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="ID" Type="number" Precision="38" Scale="0" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="FK_BENF_ID" Type="number" Precision="38" Scale="0" />
     <Property Name="COMPNAME" Type="nvarchar2" MaxLength="20" />
   </EntityType>
@@ -26,7 +26,7 @@
     <Key>
       <PropertyRef Name="ID" />
     </Key>
-    <Property Name="ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="ID" Type="number" Precision="38" Scale="0" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="FK_BENF_ID" Type="number" Precision="38" Scale="0" />
     <Property Name="GOVNAME" Type="nvarchar2" MaxLength="1" />
   </EntityType>
@@ -34,22 +34,25 @@
     <Key>
       <PropertyRef Name="ID" />
     </Key>
-    <Property Name="ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="ID" Type="number" Precision="38" Scale="0" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="ACTIVITY" Type="nvarchar2" MaxLength="20" />
   </EntityType>
   <EntityType Name="T_COMN_PERS_DATA">
     <Key>
       <PropertyRef Name="ID" />
     </Key>
-    <Property Name="ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="ID" Type="number" Precision="38" Scale="0" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="FK_BENF_ID" Type="number" Precision="38" Scale="0" />
     <Property Name="PERSNAME" Type="nvarchar2" MaxLength="20" />
+    <Property Name="PERSNID" Type="nvarchar2" MaxLength="20" />
+    <Property Name="PERSBIRTHDATE" Type="date" />
+    <Property Name="PERSADDRESS" Type="nvarchar2" MaxLength="100" />
   </EntityType>
   <EntityType Name="T_COMN_SUB_ACTIVITY">
     <Key>
       <PropertyRef Name="ID" />
     </Key>
-    <Property Name="ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="ID" Type="number" Precision="38" Scale="0" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="FK_MAINACTIVITY" Type="number" Precision="38" Scale="0" />
     <Property Name="ACTIVITY" Type="nvarchar2" MaxLength="20" />
   </EntityType>
@@ -101,15 +104,15 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="SYS_C0011330">
-    <End Role="T_COMN_BENF_TP" Type="Self.T_COMN_BENF_TP" Multiplicity="1" />
-    <End Role="T_COMN_PERS_DATA" Type="Self.T_COMN_PERS_DATA" Multiplicity="0..1" />
+  <Association Name="SYS_C0011374">
+    <End Role="T_COMN_BENF_TP" Type="Self.T_COMN_BENF_TP" Multiplicity="0..1" />
+    <End Role="T_COMN_PERS_DATA" Type="Self.T_COMN_PERS_DATA" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="T_COMN_BENF_TP">
         <PropertyRef Name="ID" />
       </Principal>
       <Dependent Role="T_COMN_PERS_DATA">
-        <PropertyRef Name="ID" />
+        <PropertyRef Name="FK_BENF_ID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -137,7 +140,7 @@
       <End Role="T_COMN_BENF_TP" EntitySet="T_COMN_BENF_TP" />
       <End Role="T_COMN_GOV_DATA" EntitySet="T_COMN_GOV_DATA" />
     </AssociationSet>
-    <AssociationSet Name="SYS_C0011330" Association="Self.SYS_C0011330">
+    <AssociationSet Name="SYS_C0011374" Association="Self.SYS_C0011374">
       <End Role="T_COMN_BENF_TP" EntitySet="T_COMN_BENF_TP" />
       <End Role="T_COMN_PERS_DATA" EntitySet="T_COMN_PERS_DATA" />
     </AssociationSet>

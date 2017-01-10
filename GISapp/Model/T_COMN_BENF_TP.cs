@@ -20,6 +20,7 @@ namespace Model
             this.T_COMN_BLACK_LIST = new HashSet<T_COMN_BLACK_LIST>();
             this.T_COMN_COMP_DATA = new HashSet<T_COMN_COMP_DATA>();
             this.T_COMN_GOV_DATA = new HashSet<T_COMN_GOV_DATA>();
+            this.T_COMN_PERS_DATA = new HashSet<T_COMN_PERS_DATA>();
         }
     
         public decimal ID { get; set; }
@@ -30,6 +31,7 @@ namespace Model
         public virtual ICollection<T_COMN_COMP_DATA> T_COMN_COMP_DATA { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<T_COMN_GOV_DATA> T_COMN_GOV_DATA { get; set; }
-        public virtual T_COMN_PERS_DATA T_COMN_PERS_DATA { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<T_COMN_PERS_DATA> T_COMN_PERS_DATA { get; set; }
     }
 }

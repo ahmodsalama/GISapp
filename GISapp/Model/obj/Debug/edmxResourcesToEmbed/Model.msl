@@ -43,21 +43,24 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="T_COMN_PERS_DATA">
-      <EntityTypeMapping TypeName="Model.T_COMN_PERS_DATA">
-        <MappingFragment StoreEntitySet="T_COMN_PERS_DATA">
-          <ScalarProperty Name="ID" ColumnName="ID" />
-          <ScalarProperty Name="FK_BENF_ID" ColumnName="FK_BENF_ID" />
-          <ScalarProperty Name="PERSNAME" ColumnName="PERSNAME" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="T_COMN_SUB_ACTIVITY">
       <EntityTypeMapping TypeName="Model.T_COMN_SUB_ACTIVITY">
         <MappingFragment StoreEntitySet="T_COMN_SUB_ACTIVITY">
           <ScalarProperty Name="ID" ColumnName="ID" />
           <ScalarProperty Name="FK_MAINACTIVITY" ColumnName="FK_MAINACTIVITY" />
           <ScalarProperty Name="ACTIVITY" ColumnName="ACTIVITY" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_COMN_PERS_DATA">
+      <EntityTypeMapping TypeName="Model.T_COMN_PERS_DATA">
+        <MappingFragment StoreEntitySet="T_COMN_PERS_DATA">
+          <ScalarProperty Name="PERSADDRESS" ColumnName="PERSADDRESS" />
+          <ScalarProperty Name="PERSBIRTHDATE" ColumnName="PERSBIRTHDATE" />
+          <ScalarProperty Name="PERSNID" ColumnName="PERSNID" />
+          <ScalarProperty Name="PERSNAME" ColumnName="PERSNAME" />
+          <ScalarProperty Name="FK_BENF_ID" ColumnName="FK_BENF_ID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

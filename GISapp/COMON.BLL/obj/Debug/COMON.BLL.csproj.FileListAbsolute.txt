@@ -1,0 +1,11 @@
+D:\work\Zeka\GISapp\GISapp\GISapp\COMON.BLL\bin\Debug\COMON.BLL.dll
+D:\work\Zeka\GISapp\GISapp\GISapp\COMON.BLL\bin\Debug\COMON.BLL.pdb
+D:\work\Zeka\GISapp\GISapp\GISapp\COMON.BLL\bin\Debug\DAL.dll
+D:\work\Zeka\GISapp\GISapp\GISapp\COMON.BLL\bin\Debug\Model.dll
+D:\work\Zeka\GISapp\GISapp\GISapp\COMON.BLL\bin\Debug\EntityFramework.dll
+D:\work\Zeka\GISapp\GISapp\GISapp\COMON.BLL\bin\Debug\DAL.pdb
+D:\work\Zeka\GISapp\GISapp\GISapp\COMON.BLL\bin\Debug\Model.pdb
+D:\work\Zeka\GISapp\GISapp\GISapp\COMON.BLL\bin\Debug\EntityFramework.xml
+D:\work\Zeka\GISapp\GISapp\GISapp\COMON.BLL\obj\Debug\COMON.BLL.csprojResolveAssemblyReference.cache
+D:\work\Zeka\GISapp\GISapp\GISapp\COMON.BLL\obj\Debug\COMON.BLL.dll
+D:\work\Zeka\GISapp\GISapp\GISapp\COMON.BLL\obj\Debug\COMON.BLL.pdb
